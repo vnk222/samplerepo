@@ -22,8 +22,7 @@ hi this is naveen...
 </div>
 <div>
         <ul>
-        <li *ngFor="let user of usersDom">{{user.id}}</li>
-        <li *ngFor="let user of userDom">{{user.name}}</li>
+        <li *ngFor="let user of usersDom.children">{{user.id}} {{user.name}}</li>
         </ul>
         </div>
 

@@ -23,19 +23,19 @@ export class CreateComponent implements OnInit {
     constructor(private createService: CreateService, private router: Router) {
 
     }
-    ngOnInit() {
-        alert("nginti")
-        //this.createService.getAll().subscribe(p=>  this.router.navigate(['login']));
-        this.createService.getUsers().subscribe(data => this.usersDom = data);
-    }
+    // ngOnInit() {
+    //     alert("nginti")
+    //    // this.createService.getUsers().subscribe(data => this.usersDom = data);
+    // }
     search() {
         var id = this.model.custid;
+        this.model.custname="";
+        this.model.custemail="";
         //var name
         this.createService.getUserById(id).subscribe(p => this.usersDom = p);
-        var userList = this.usersDom.name;
-        // userList=JSON.parse(JSON.stringify(userList));
-        console.log("hinaveve");
-        console.log("hinaveve" + userList);
+       
+        this.model.custname = this.usersDom[0].name;
+        this.model.custemail = this.usersDom[0].email;
     }
 
     reset() {
