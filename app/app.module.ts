@@ -2,6 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+//import { EJAngular2Module } from 'ej-angular2';
+import { AgGridModule} from 'ag-grid-angular';
 
 
 // used to create fake backend
@@ -24,7 +26,10 @@ import { CreateComponent } from './create/index';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        routing
+        routing,
+  //      EJAngular2Module.forRoot(),
+        AgGridModule.withComponents(CreateComponent)
+        
     ],
     declarations: [
         AppComponent,

@@ -19,14 +19,14 @@ export class CreateComponent implements OnInit {
     user: string;
     dom: any;
     users: Users[];
-
+    rowData:any = [];
     constructor(private createService: CreateService, private router: Router) {
 
     }
-    // ngOnInit() {
+     ngOnInit() {
     //     alert("nginti")
-    //    // this.createService.getUsers().subscribe(data => this.usersDom = data);
-    // }
+         this.createService.getUsers().subscribe(data => this.rowData = data);
+     }
     search() {
         var id = this.model.custid;
         this.model.custname="";
@@ -36,6 +36,7 @@ export class CreateComponent implements OnInit {
        
         this.model.custname = this.usersDom[0].name;
         this.model.custemail = this.usersDom[0].email;
+        
     }
 
     reset() {
@@ -43,4 +44,17 @@ export class CreateComponent implements OnInit {
         this.model.custid = "";
         this.model.custemail = "";
     }
+
+    columnDefs = [
+        {headerName: 'ID', field: 'id',style:"width:100px"},
+        {headerName: 'Name', field: 'name',editable: true},
+        {headerName: 'Email', field: 'email'},
+        {headerName: 'Phone', field: 'phone'}
+    ];
+    //rowData = this.usersDom;
+    // rowData = [
+    //     {make: 'Toyota', model: 'Celica', price: 35000},
+    //     {make: 'Ford', model: 'Mondeo', price: 32000},
+    //     {make: 'Porsche', model: 'Boxter', price: 72000}
+    // ];
 } 

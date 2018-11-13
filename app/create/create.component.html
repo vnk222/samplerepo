@@ -26,9 +26,42 @@ hi this is naveen...
         </ul>
         </div>
 
-    
+
+        <ag-grid-angular 
+        style="width: 700px; height: 300px;" 
+        class="ag-theme-balham"
+        [pagination]="true"
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs"
+        >
+    </ag-grid-angular>
+         <!-- <ej-grid id="Grid" [dataSource]="usersDom" >
+            <e-columns>
+                <e-column field="id"  headerText="userId" width="75" textAlign="right"></e-column>
+                <e-column field="name" headerText="userName" width="80"></e-column>
+                <e-column field="email" headerText="userEmail" width="75" textAlign="left"></e-column>
+                <e-column field="phone" width="75" headerText="userPhone" textAlign="right"></e-column>
+                <!-- <e-column field="OrderDate" headerText="OrderDate" width="80" format="{0:MM/dd/yyyy}" textAlign="right"></e-column>
+                <e-column field="ShipCity" headerText="ShipCity" width="110"></e-column> -->
+             <!-- </e-columns>
+        </ej-grid>   -->
     </form>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- <div class="col-md-6 col-md-offset-3">
             <h2>Login</h2>
             <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>

@@ -23,6 +23,9 @@
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
+             'ag-grid-angular': 'node_modules/ag-grid-angular',
+             'ag-grid-community': 'node_modules/ag-grid-community',
+
             // other libraries
             'rxjs': 'npm:rxjs',
             'tslib': 'npm:tslib/tslib.js'
@@ -35,7 +38,13 @@
             },
             rxjs: {
                 defaultExtension: 'js'
-            }
+            },
+             'ag-grid-community': {
+                main: 'main.js'
+             },
+             'ag-grid-angular': {
+                main: 'main.js'
+             }
         }
     });
 })(this);
